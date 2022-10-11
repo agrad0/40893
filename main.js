@@ -1,16 +1,16 @@
-var form = document.getElementById(`form`);
+let form = document.getElementById(`form`);
 
-var formName = document.querySelector("#name");
-var formEmail = document.querySelector("#email");
-var errorListContainer = document.querySelector("#error-list-container");
+let formName = document.querySelector("#name");
+let formEmail = document.querySelector("#email");
+let errorListContainer = document.querySelector("#error-list-container");
 
-var consent1 = document.querySelector("#consent-1");
-var consent2 = document.querySelector("#consent-2");
-var consentAll = document.querySelector("#consent-all");
-var submit = document.querySelector("#submit");
+let consent1 = document.querySelector("#consent-1");
+let consent2 = document.querySelector("#consent-2");
+let consentAll = document.querySelector("#consent-all");
+let submit = document.querySelector("#submit");
 
-var errorList = document.createElement("ul");
-var count = 0;
+let errorList = document.createElement("ul");
+let count = 0;
 
 consentAll.addEventListener("change", (e) => {
     if (e.target.checked) {
