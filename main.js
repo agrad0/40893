@@ -10,8 +10,7 @@ let consentAll = document.querySelector("#consent-all");
 let submit = document.querySelector("#submit");
 
 let errorList = document.createElement("ul");
-let count = 0;
-
+errorListContainer.appendChild(errorList);
 consentAll.addEventListener("change", (e) => {
     if (e.target.checked) {
       consent1.checked = true;
@@ -29,10 +28,9 @@ consentAll.addEventListener("change", (e) => {
 // form.setAttribute("onsubmit", "return validate()")
 
 function validate(event) {
-    if ((formName.value == "") || (formEmail.value == "") || (!formEmail.value.includes("@")) || (consent1.checked == false) && (count === 0)) {
+    errorList.innerHTML = "";
+    if ((formName.value == "") || (formEmail.value == "") || (!formEmail.value.includes("@")) || (consent1.checked == false)) {
         event.preventDefault();
-        errorListContainer.appendChild(errorList);
-        count = 1;
     }
     if (formName.value.trim() === "") {
         let listItem = document.createElement("li");
@@ -44,7 +42,6 @@ function validate(event) {
         let listItem = document.createElement("li");
         listItem.innerText = 'Wpisz Adres e-mail!';
         errorList.appendChild(listItem);
-    
     }
 
     if (!formEmail.value.includes("@")) {
@@ -60,7 +57,4 @@ function validate(event) {
     }
 }
 
-
-
 form.addEventListener('submit', validate);
-console.log(count);
